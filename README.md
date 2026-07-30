@@ -1,21 +1,40 @@
-# 💫 About Me:
-🎓 Passionate student building creative projects in my spare time.<br>💻 Developing with JavaScript.<br>🎨 Designing with Figma & styling with Tailwind CSS.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=FFFFFF&height=180&section=header&text=Kevin%20Keynaro&fontColor=000000&fontSize=42&fontAlignY=40" width="100%" />
+</p>
 
+<h3 align="center">Aspiring Penetration Tester - Network Security Enthusiast</h3>
 
-## 🌐 Socials:
-[![Behance](https://img.shields.io/badge/Behance-1769ff?logo=behance&logoColor=white)](https://behance.net/kevinkeynaro/appreciated) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/1kevkey/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tubagus-kevin-keynaro-christiawan-825047395/) 
-
-# 💻 Tech Stack:
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Alpine.js](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.shion.dev/api?username=KevinKeynaro&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=KevinKeynaro&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=KevinKeynaro&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
-
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=KevinKeynaro&limit=5&theme=dark&combine_all_yearly_contributions=true)
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&width=600&center=true&vCenter=true&color=1E40AF&lines=Learning+to+build+before+I+learn+to+break;Network+security+%2B+ethical+hacking;TryHackMe+in+progress" alt="Typing SVG" />
+</p>
 
 ---
-[![](https://komarev.com/ghpvc/?username=KevinKeynaro&icon=0&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+### About Me
+
+Hey, I'm Kevin - a student working my way toward becoming a penetration tester and white hat hacker. Right now I'm learning web development first, since understanding how things are built makes it a lot easier to understand how they break.
+
+- Goal: becoming a **penetration tester / white hat hacker**
+- Focus area: **network security**
+- Currently working through **TryHackMe** rooms
+- When I'm not learning, I'm usually reading books, novels, or comics - or listening to music nonstop
+
+---
+
+### Currently Learning
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,python,linux,git" />
+</p>
+
+<p align="left">
+  <img src="https://img.shields.io/badge/TryHackMe-212C42?style=flat-square&logo=tryhackme&logoColor=red" />
+</p>
+
+---
+
+### GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=KevinKeynaro&show_icons=true&theme=cobalt&hide_border=true&title_color=1E40AF&icon_color=3B82F6&text_color=1E293B&bg_color=FFFFFF00" width="48%" />
+</p>
