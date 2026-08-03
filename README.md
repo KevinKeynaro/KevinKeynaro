@@ -47,7 +47,12 @@ Learning web development first, since understanding how things are built makes i
 
 <h2>🛠️ Skills & Tools</h2>
 
-<img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,python,linux,git&theme=light" alt="skill icons" />
+<img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript" />
+<img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+<img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+<img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+<img src="https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="Windows Terminal" />
 
 <br><br>
 
@@ -59,13 +64,13 @@ Learning web development first, since understanding how things are built makes i
 
 <h2>📊 GitHub Contributions</h2>
 
-<img src="./generated/overview.svg" alt="GitHub total contributions" />
+<img src="https://streak-stats.demolab.com/?user=KevinKeynaro&theme=dark&hide_border=true&stroke=38BDF8&ring=38BDF8&fire=38BDF8&background=0D1117&currStreakLabel=38BDF8" alt="GitHub total contributions" />
 
 <br><br>
 
 <h2>💻 Most Used Languages</h2>
 
-<img src="./generated/languages.svg" alt="most used languages" />
+<img src="https://github-readme-stats.shion.dev/api/top-langs/?username=KevinKeynaro&theme=dark&hide_border=true&layout=compact&include_all_commits=false&count_private=false&bg_color=0D1117&title_color=38BDF8&text_color=FFFFFF" alt="most used languages" />
 
 <br><br>
 
