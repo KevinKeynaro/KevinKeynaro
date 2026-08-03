@@ -59,13 +59,13 @@ Learning web development first, since understanding how things are built makes i
 
 <h2>📊 GitHub Contributions</h2>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=KevinKeynaro&theme=dark&hide_border=true&stroke=38BDF8&ring=38BDF8&fire=38BDF8&background=0D1117&currStreakLabel=38BDF8" alt="GitHub total contributions" />
+<img src="./generated/overview.svg" alt="GitHub total contributions" />
 
 <br><br>
 
 <h2>💻 Most Used Languages</h2>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KevinKeynaro&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=38BDF8&text_color=FFFFFF" alt="most used languages" />
+<img src="./generated/languages.svg" alt="most used languages" />
 
 <br><br>
 
