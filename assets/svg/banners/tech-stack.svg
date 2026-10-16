@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1212 222" width="1212" height="222">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1212 128" width="1212" height="128">
   <defs>
-    <linearGradient id="banner-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
+    <linearGradient id="banner-fade-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="6.023%" stop-color="#FFFFFF"/>
+      <stop offset="93.977%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
-    <linearGradient id="banner-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#1e40af"/>
-    </linearGradient>
+    <mask id="banner-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1212" height="128">
+      <rect x="0" y="0" width="1212" height="128" fill="url(#banner-fade-grad)"/>
+    </mask>
     <linearGradient id="icon-python-grad-a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/></linearGradient>
     <linearGradient id="icon-python-grad-b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFE873"/></linearGradient>
     <radialGradient id="icon-python-grad-c" cx="1825.678" cy="444.45" r="26.743" gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"/><stop offset="1" stop-color="#7F7F7F" stop-opacity="0"/></radialGradient>
@@ -58,99 +59,41 @@
     </symbol>
   </defs>
 
-  <!-- Banner Card Background -->
-  <rect width="1212" height="222" rx="16" fill="url(#banner-bg)" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Background: black rectangle, sharp corners -->
+  <rect x="0" y="0" width="1212" height="128" fill="#000000"/>
 
-  <!-- Top Accent Bar -->
-  <path d="M 16 1.5 L 1196 1.5" stroke="url(#banner-accent)" stroke-width="3" stroke-linecap="round"/>
-
-  <!-- Header -->
-  <text x="32" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#f0f6fc">Technologies & Tools</text>
-  <text x="32" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#8b949e">Languages, Frameworks, Databases & Version Control</text>
-
-  <!-- Icon Badges -->
-  <g transform="translate(32, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-python" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Python</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(198, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-javascript" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">JavaScript</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(364, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-typescript" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">TypeScript</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(530, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-flutter" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Flutter</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Framework</text>
-  </g>
-  <g transform="translate(696, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-dart" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Dart</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(862, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-nodejs" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Node.js</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Runtime</text>
-  </g>
-  <g transform="translate(1028, 82)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-express" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Express.js</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Framework</text>
-  </g>
-  <g transform="translate(32, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-mysql" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">MySQL</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Database</text>
-  </g>
-  <g transform="translate(198, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-git" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Git</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Version Control</text>
-  </g>
-  <g transform="translate(364, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-github" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">GitHub</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Platform</text>
-  </g>
-  <g transform="translate(530, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-html5" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">HTML5</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(696, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-css3" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">CSS3</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Language</text>
-  </g>
-  <g transform="translate(862, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-supabase" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Supabase</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Database</text>
-  </g>
-  <g transform="translate(1028, 146)">
-    <rect width="152" height="54" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-    <use href="#banner-nextjs" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#f0f6fc">Next.js</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#8b949e">Framework</text>
+  <!-- Scrolling icons, faded at both edges by the mask -->
+  <g mask="url(#banner-fade)">
+    <g>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-1792 0" dur="30s" repeatCount="indefinite"/>
+      <use href="#banner-python" xlink:href="#banner-python" x="32.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-javascript" xlink:href="#banner-javascript" x="160.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-typescript" xlink:href="#banner-typescript" x="288.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-flutter" xlink:href="#banner-flutter" x="416.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-dart" xlink:href="#banner-dart" x="544.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nodejs" xlink:href="#banner-nodejs" x="672.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-express" xlink:href="#banner-express" x="800.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-mysql" xlink:href="#banner-mysql" x="928.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-git" xlink:href="#banner-git" x="1056.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-github" xlink:href="#banner-github" x="1184.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-html5" xlink:href="#banner-html5" x="1312.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-css3" xlink:href="#banner-css3" x="1440.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-supabase" xlink:href="#banner-supabase" x="1568.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nextjs" xlink:href="#banner-nextjs" x="1696.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-python" xlink:href="#banner-python" x="1824.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-javascript" xlink:href="#banner-javascript" x="1952.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-typescript" xlink:href="#banner-typescript" x="2080.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-flutter" xlink:href="#banner-flutter" x="2208.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-dart" xlink:href="#banner-dart" x="2336.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nodejs" xlink:href="#banner-nodejs" x="2464.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-express" xlink:href="#banner-express" x="2592.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-mysql" xlink:href="#banner-mysql" x="2720.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-git" xlink:href="#banner-git" x="2848.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-github" xlink:href="#banner-github" x="2976.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-html5" xlink:href="#banner-html5" x="3104.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-css3" xlink:href="#banner-css3" x="3232.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-supabase" xlink:href="#banner-supabase" x="3360.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nextjs" xlink:href="#banner-nextjs" x="3488.00" y="32.00" width="64" height="64"/>
+    </g>
   </g>
 </svg>

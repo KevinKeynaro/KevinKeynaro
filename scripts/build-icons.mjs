@@ -351,23 +351,24 @@ ${defsSection}${symbols.join('\n')}
 }
 
 /**
- * Generate a standalone banner with embedded icon symbols
+ * Generate a standalone, text-free banner: a black rectangle with a
+ * seamlessly scrolling row of icons and a fade at both edges.
+ *
+ * No <text> elements are emitted. The marquee is driven by a CSS
+ * animation inside the file, and the edge fade is a luminance mask.
  */
 export function formatBannerSvg(selectedIcons, options = {}) {
-  const title = options.title || 'Technologies & Tools';
-  const subtitle = options.subtitle || 'Core Languages, Frameworks, Databases & Version Control';
   const theme = options.theme || 'dark';
-
   const isDark = theme === 'dark';
-  const bgColor1 = isDark ? '#0d1117' : '#ffffff';
-  const bgColor2 = isDark ? '#161b22' : '#f6f8fa';
-  const borderColor = isDark ? '#30363d' : '#d0d7de';
-  const cardBg = isDark ? '#161b22' : '#ffffff';
-  const cardBorder = isDark ? '#30363d' : '#e1e4e8';
-  const titleColor = isDark ? '#f0f6fc' : '#1f2328';
-  const subtitleColor = isDark ? '#8b949e' : '#656d76';
-  const cardTextColor = isDark ? '#f0f6fc' : '#24292f';
-  const cardSubColor = isDark ? '#8b949e' : '#57606a';
+  const bgColor = isDark ? '#000000' : '#ffffff';
+  const maskVisible = '#FFFFFF';
+
+  const width = options.width || 1212;
+  const height = options.height || 128;
+  const iconSize = options.iconSize || 64;
+  const pitch = options.pitch || 128;
+  const fadeWidth = options.fadeWidth || Math.round(width * 0.06);
+  const speed = options.speed || 60; // pixels per second
 
   const allDefs = [];
   const symbols = [];
@@ -382,66 +383,48 @@ export function formatBannerSvg(selectedIcons, options = {}) {
   }
 
   const count = selectedIcons.length;
-  const cols = count <= 5 ? count : Math.ceil(count / 2);
-  const rows = count <= 5 ? 1 : 2;
+  const setWidth = count * pitch;
+  // Repeat the icon set enough times that the track always covers the viewport.
+  const repeats = Math.max(2, Math.ceil((width + setWidth) / setWidth));
+  const duration = Math.max(12, Math.round(setWidth / speed));
 
-  const cardWidth = 152;
-  const cardHeight = 54;
-  const gapX = 14;
-  const gapY = 10;
-  const paddingX = 32;
-
-  const width = Math.max(760, paddingX * 2 + cols * cardWidth + (cols - 1) * gapX);
-  const headerHeight = 76;
-  const height = headerHeight + rows * cardHeight + (rows - 1) * gapY + 28;
-
-  const startY = headerHeight + 6;
-
-  const cardsSvg = selectedIcons.map((icon, idx) => {
-    let row = 0;
-    let col = idx;
-    if (rows === 2) {
-      row = idx < cols ? 0 : 1;
-      col = idx < cols ? idx : idx - cols;
+  const iconY = (height - iconSize) / 2;
+  const uses = [];
+  for (let r = 0; r < repeats; r++) {
+    for (let i = 0; i < count; i++) {
+      const icon = selectedIcons[i];
+      const x = (r * count + i) * pitch + (pitch - iconSize) / 2;
+      uses.push(`      <use href="#banner-${icon.id}" xlink:href="#banner-${icon.id}" x="${x.toFixed(2)}" y="${iconY.toFixed(2)}" width="${iconSize}" height="${iconSize}"/>`);
     }
+  }
 
-    const x = paddingX + col * (cardWidth + gapX);
-    const y = startY + row * (cardHeight + gapY);
+  const fadePercent = Math.min(45, Math.max(1, (fadeWidth / width) * 100));
 
-    return `  <g transform="translate(${x}, ${y})">
-    <rect width="${cardWidth}" height="${cardHeight}" rx="10" fill="${cardBg}" stroke="${cardBorder}" stroke-width="1"/>
-    <use href="#banner-${icon.id}" x="12" y="10" width="34" height="34"/>
-    <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="${cardTextColor}">${icon.name}</text>
-    <text x="54" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="${cardSubColor}">${icon.category}</text>
-  </g>`;
-  }).join('\n');
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
   <defs>
-    <linearGradient id="banner-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${bgColor1}"/>
-      <stop offset="100%" stop-color="${bgColor2}"/>
+    <linearGradient id="banner-fade-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="${fadePercent.toFixed(3)}%" stop-color="${maskVisible}"/>
+      <stop offset="${(100 - fadePercent).toFixed(3)}%" stop-color="${maskVisible}"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
-    <linearGradient id="banner-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#1e40af"/>
-    </linearGradient>
+    <mask id="banner-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="${width}" height="${height}">
+      <rect x="0" y="0" width="${width}" height="${height}" fill="url(#banner-fade-grad)"/>
+    </mask>
     ${allDefs.join('\n    ')}
 ${symbols.join('\n')}
   </defs>
 
-  <!-- Banner Card Background -->
-  <rect width="${width}" height="${height}" rx="16" fill="url(#banner-bg)" stroke="${borderColor}" stroke-width="1.5"/>
+  <!-- Background: black rectangle, sharp corners -->
+  <rect x="0" y="0" width="${width}" height="${height}" fill="${bgColor}"/>
 
-  <!-- Top Accent Bar -->
-  <path d="M 16 1.5 L ${width - 16} 1.5" stroke="url(#banner-accent)" stroke-width="3" stroke-linecap="round"/>
-
-  <!-- Header -->
-  <text x="${paddingX}" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="${titleColor}">${title}</text>
-  <text x="${paddingX}" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="${subtitleColor}">${subtitle}</text>
-
-  <!-- Icon Badges -->
-${cardsSvg}
+  <!-- Scrolling icons, faded at both edges by the mask -->
+  <g mask="url(#banner-fade)">
+    <g>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-${setWidth} 0" dur="${duration}s" repeatCount="indefinite"/>
+${uses.join('\n')}
+    </g>
+  </g>
 </svg>
 `;
 }
@@ -469,17 +452,112 @@ export function generateCustomIcon({ id, name, category = 'Custom', brandColor =
 }
 
 /**
+ * Escape XML special characters in text and attribute strings
+ */
+export function escapeXml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+/**
  * Comprehensive SVG Validator
  */
 export function validateSvg(svgString, filename = 'svg') {
   const errors = [];
 
-  if (!svgString.startsWith('<svg') || !svgString.trim().endsWith('</svg>')) {
+  // 1. Root tag check
+  const trimmed = svgString.trim();
+  if (!trimmed.startsWith('<svg') || !trimmed.endsWith('</svg>')) {
     errors.push('Root tag must be <svg>...</svg>');
   }
 
-  if (!svgString.includes('xmlns="http://www.w3.org/2000/svg"')) {
-    errors.push('Missing xmlns="http://www.w3.org/2000/svg"');
+  // Namespace checks
+  const rootTagMatch = trimmed.match(/^<svg\b[^>]*>/i);
+  const rootTag = rootTagMatch ? rootTagMatch[0] : '';
+  if (!rootTag.includes('xmlns="http://www.w3.org/2000/svg"')) {
+    errors.push('Root <svg> missing xmlns="http://www.w3.org/2000/svg"');
+  }
+
+  const hasXlinkHref = /xlink:href\s*=/i.test(svgString);
+  if (hasXlinkHref && !rootTag.includes('xmlns:xlink="http://www.w3.org/1999/xlink"')) {
+    errors.push('xlink:href used without xmlns:xlink="http://www.w3.org/1999/xlink" on root <svg>');
+  }
+
+  // 2. Prohibited elements and external references
+  if (/<script\b/i.test(svgString)) {
+    errors.push('Prohibited <script> tag detected');
+  }
+  if (/<foreignObject\b/i.test(svgString)) {
+    errors.push('Prohibited <foreignObject> tag detected');
+  }
+  if (/@import\b/i.test(svgString)) {
+    errors.push('Prohibited CSS @import detected');
+  }
+
+  const imageMatches = [...svgString.matchAll(/<image\b[^>]*>/gi)];
+  for (const img of imageMatches) {
+    if (/(?:href|xlink:href)=["']https?:\/\//i.test(img[0])) {
+      errors.push('External <image> reference detected');
+    }
+  }
+
+  // Check all href / xlink:href
+  const allHrefs = [...svgString.matchAll(/(?:href|xlink:href)=["']([^"']+)["']/gi)].map(m => m[1]);
+  for (const href of allHrefs) {
+    if (!href.startsWith('#')) {
+      errors.push(`External or invalid href reference detected: "${href}"`);
+    }
+  }
+
+  // Check all url()
+  const allUrls = [...svgString.matchAll(/url\(([^)]+)\)/gi)].map(m => m[1].replace(/["']/g, '').trim());
+  for (const u of allUrls) {
+    if (!u.startsWith('#')) {
+      errors.push(`External or invalid url() reference detected: "${u}"`);
+    }
+  }
+
+  // 3. Check for references to external sprite.svg
+  if (/sprite\.svg/i.test(svgString)) {
+    errors.push('External reference to sprite.svg detected');
+  }
+
+  // 4. No <?xml ...?> or <!DOCTYPE> in the middle, and no unescaped &
+  const xmlDeclMatches = [...svgString.matchAll(/<\?xml/gi)];
+  if (xmlDeclMatches.length > 0 && !trimmed.startsWith('<?xml')) {
+    errors.push('<?xml declaration in middle of file');
+  }
+  if (/<!DOCTYPE/gi.test(svgString)) {
+    errors.push('<!DOCTYPE declaration detected in SVG');
+  }
+
+  const unescapedAmp = [...svgString.matchAll(/&(?!(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)/g)];
+  if (unescapedAmp.length > 0) {
+    errors.push(`Found ${unescapedAmp.length} unescaped '&' character(s) in SVG`);
+  }
+
+  // 5. Check duplicate ID attributes
+  const allIds = [...svgString.matchAll(/\sid=["']([^"']+)["']/g)].map(m => m[1]);
+  const seenIds = new Set();
+  const duplicateIds = new Set();
+  for (const id of allIds) {
+    if (seenIds.has(id)) {
+      duplicateIds.add(id);
+    }
+    seenIds.add(id);
+  }
+  if (duplicateIds.size > 0) {
+    errors.push(`Duplicate id attributes: ${[...duplicateIds].join(', ')}`);
+  }
+
+  // 6. Base64 and data: URI checks
+  if (/data:(?!image\/svg\+xml)[^"'\s)]+/i.test(svgString)) {
+    errors.push('Suspicious data: URI detected in SVG');
   }
 
   const vbMatch = svgString.match(/viewBox="([^"]+)"/);
@@ -487,15 +565,16 @@ export function validateSvg(svgString, filename = 'svg') {
     errors.push('Missing viewBox');
   }
 
+  // Check resolved internal ID references
   const urlRefs = [...svgString.matchAll(/url\(#([^)]+)\)/g)].map(m => m[1]);
-  const useRefs = [...svgString.matchAll(/href="#([^"]+)"/g)].map(m => m[1]);
-  const ids = new Set([...svgString.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
+  const useRefs = [...svgString.matchAll(/(?:href|xlink:href)="#([^"]+)"/g)].map(m => m[1]);
+  const idSet = new Set(allIds);
 
   for (const ref of urlRefs) {
-    if (!ids.has(ref)) errors.push(`Unresolved url(#${ref}) reference`);
+    if (!idSet.has(ref)) errors.push(`Unresolved url(#${ref}) reference`);
   }
   for (const ref of useRefs) {
-    if (!ids.has(ref)) errors.push(`Unresolved href="#${ref}" reference`);
+    if (!idSet.has(ref)) errors.push(`Unresolved href="#${ref}" reference`);
   }
 
   // XML Tag balancing checker
@@ -552,8 +631,7 @@ export async function buildAll() {
 
   console.log('[4/5] Generating standalone banners...');
   const bannerContent = formatBannerSvg(iconsData, {
-    title: 'Technologies & Tools',
-    subtitle: 'Languages, Frameworks, Databases & Version Control'
+    theme: 'dark'
   });
   const bannerPath = path.join(BANNERS_DIR, 'tech-stack.svg');
   await fs.writeFile(bannerPath, bannerContent, 'utf8');
@@ -599,10 +677,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     await buildAll();
   } else if (cmd === 'banner') {
     // Generate custom banner
-    // node scripts/build-icons.mjs banner --icons=python,javascript --title="My Stack" --output=assets/svg/banners/custom.svg
+    // node scripts/build-icons.mjs banner --icons=python,javascript --output=assets/svg/banners/custom.svg
     const iconsArg = args.find(a => a.startsWith('--icons='))?.split('=')[1] || '';
-    const titleArg = args.find(a => a.startsWith('--title='))?.split('=')[1] || 'Tech Stack';
-    const subtitleArg = args.find(a => a.startsWith('--subtitle='))?.split('=')[1];
     const outArg = args.find(a => a.startsWith('--output='))?.split('=')[1] || 'assets/svg/banners/custom-banner.svg';
     const themeArg = args.find(a => a.startsWith('--theme='))?.split('=')[1] || 'dark';
 
@@ -614,7 +690,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       iconsData.push(await getIconContent(c));
     }
 
-    const bannerSvg = formatBannerSvg(iconsData, { title: titleArg, subtitle: subtitleArg, theme: themeArg });
+    const bannerSvg = formatBannerSvg(iconsData, { theme: themeArg });
     const fullOut = path.resolve(ROOT_DIR, outArg);
     await fs.mkdir(path.dirname(fullOut), { recursive: true });
     await fs.writeFile(fullOut, bannerSvg, 'utf8');
