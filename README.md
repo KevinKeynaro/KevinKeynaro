@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/svg/banners/header-banner.svg" alt="Core Technologies" width="100%">
+</p>
+
 # Hi, I'm Kevin
 
 **Web developer building toward a career in penetration testing.**
@@ -34,5 +38,5 @@ A lost-and-found app for a school. Teachers post found items with a photo, stude
 ## Languages & tools
 
 <p align="center">
-  <img src="assets/svg/banners/tech-stack.svg" alt="Languages and frameworks I use" width="100%">
+  <img src="assets/svg/banners/footer-banner.svg" alt="Tooling and ecosystem" width="100%">
 </p>

@@ -297,13 +297,177 @@ export const ICONS = [
     fallbackDefs: '',
     fallbackBody: `<path fill="#76d04b" d="M61.061 125.21a5.863 5.863 0 0 0 5.867 0l48.606-28.048a5.867 5.867 0 0 0 2.936-5.085V35.938a5.876 5.876 0 0 0-2.933-5.084L66.932 2.783a5.876 5.876 0 0 0-5.874 0l-48.593 28.07a5.874 5.874 0 0 0-2.935 5.085V92.08a5.866 5.866 0 0 0 2.936 5.081L61.06 125.21"/>
   <path fill="#4f4d3f" d="M95.468 50.618 93.3 49.371c3.334-4.917 5.325-12.308 2.828-23.36 0 0-5.625 15.765-16.931 15.243l-13.24-7.62a3.451 3.451 0 0 0-1.624-.471h-.305a3.506 3.506 0 0 0-1.63.472l-13.24 7.619c-11.306.523-16.932-15.242-16.932-15.242-2.499 11.05-.504 18.442 2.829 23.359l-2.168 1.247a3.572 3.572 0 0 0-1.785 3.098l.065 45.73c0 .639.33 1.23.89 1.54.548.33 1.225.33 1.77 0l17.54-10.043c1.11-.66 1.785-1.822 1.785-3.093V66.486a3.55 3.55 0 0 1 1.78-3.086l7.467-4.3a3.523 3.523 0 0 1 1.787-.482c.608 0 1.232.157 1.773.48l7.466 4.301a3.55 3.55 0 0 1 1.783 3.086V87.85c0 1.271.683 2.443 1.786 3.093l17.534 10.043c.55.33 1.238.33 1.783 0 .543-.31.885-.902.885-1.54l.057-45.73a3.557 3.557 0 0 0-1.783-3.098z"/>`
+  },
+  {
+    id: 'postman',
+    name: 'Postman',
+    category: 'Tool',
+    brandColor: '#F37036',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'cloudinary',
+    name: 'Cloudinary',
+    category: 'Cloud',
+    brandColor: '#3448C5',
+    sourceUrl: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudinary.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'jwt',
+    name: 'JWT',
+    category: 'Security',
+    brandColor: '#D63AFF',
+    sourceUrl: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jsonwebtokens.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'zod',
+    name: 'Zod',
+    category: 'Validation',
+    brandColor: '#3E67B1',
+    sourceUrl: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/zod.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'dotenv',
+    name: 'Dotenv',
+    category: 'Configuration',
+    brandColor: '#ECD53F',
+    sourceUrl: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dotenv.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'laragon',
+    name: 'Laragon',
+    category: 'Tool',
+    brandColor: '#0E83CD',
+    sourceUrl: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/laragon.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'mysql2',
+    name: 'MySQL2',
+    category: 'Database',
+    brandColor: '#F29111',
+    sourceUrl: '',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'mysqlworkbench',
+    name: 'MySQL Workbench',
+    category: 'Database',
+    brandColor: '#00618A',
+    sourceUrl: '',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'bcrypt',
+    name: 'Bcrypt',
+    category: 'Security',
+    brandColor: '#2B5B84',
+    sourceUrl: '',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
   }
 ];
+
+export const CATEGORY_MAP = {
+  python: 'languages',
+  javascript: 'languages',
+  typescript: 'languages',
+  dart: 'languages',
+  html5: 'frontend',
+  css3: 'frontend',
+  flutter: 'frontend',
+  nextjs: 'frontend',
+  nodejs: 'backend',
+  express: 'backend',
+  jwt: 'backend',
+  zod: 'backend',
+  dotenv: 'backend',
+  bcrypt: 'backend',
+  mysql: 'database',
+  mysql2: 'database',
+  mysqlworkbench: 'database',
+  postgresql: 'database',
+  supabase: 'database',
+  cloudinary: 'cloud',
+  git: 'tools',
+  github: 'tools',
+  laragon: 'tools',
+  nodemon: 'tools',
+  numpy: 'tools',
+  postman: 'tools'
+};
 
 /**
  * Fetch or retrieve normalized icon components
  */
 export async function getIconContent(iconConfig) {
+  // Check local file in ICONS_DIR first to reuse vetted local vectors
+  try {
+    const localPath = path.join(ICONS_DIR, `${iconConfig.id}.svg`);
+    const localRaw = await fs.readFile(localPath, 'utf8');
+    let clean = localRaw.replace(/<\?xml[^>]*\?>/gi, '')
+                        .replace(/<!DOCTYPE[^>]*>/gi, '')
+                        .replace(/<!--[\s\S]*?-->/g, '');
+    const defs = [];
+    clean = clean.replace(/<defs>([\s\S]*?)<\/defs>/gi, (_, d) => {
+      defs.push(d);
+      return '';
+    });
+    const innerMatch = clean.match(/<svg[^>]*>([\s\S]*?)<\/svg>/i);
+    const inner = innerMatch ? innerMatch[1].trim() : clean.trim();
+    return {
+      id: iconConfig.id,
+      name: iconConfig.name,
+      category: iconConfig.category,
+      brandColor: iconConfig.brandColor,
+      defs: defs.join('\n    '),
+      body: inner,
+      isApproximation: false
+    };
+  } catch {
+    // continue to fetch/fallback
+  }
+
   try {
     const res = await fetch(iconConfig.sourceUrl, { signal: AbortSignal.timeout(6000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -661,8 +825,12 @@ export async function buildAll() {
     const filePath = path.join(ICONS_DIR, `${iconData.id}.svg`);
     const svgContent = formatIndividualSvg(iconData);
     await fs.writeFile(filePath, svgContent, 'utf8');
-    if (iconData.id === 'postgresql') {
-      await fs.writeFile(path.join(ICONS_DIR, 'postgressql.svg'), svgContent, 'utf8');
+
+    const subfolder = CATEGORY_MAP[iconData.id];
+    if (subfolder) {
+      const subDir = path.join(ICONS_DIR, subfolder);
+      await fs.mkdir(subDir, { recursive: true });
+      await fs.writeFile(path.join(subDir, `${iconData.id}.svg`), svgContent, 'utf8');
     }
   }
 
@@ -671,11 +839,34 @@ export async function buildAll() {
   await fs.writeFile(SPRITE_PATH, spriteContent, 'utf8');
 
   console.log('[4/5] Generating standalone banners...');
-  const bannerContent = formatBannerSvg(iconsData, {
-    theme: 'dark'
-  });
-  const bannerPath = path.join(BANNERS_DIR, 'tech-stack.svg');
-  await fs.writeFile(bannerPath, bannerContent, 'utf8');
+  const HEADER_ICON_IDS = [
+    'typescript', 'javascript', 'python', 'dart',
+    'nextjs', 'flutter', 'html5', 'css3',
+    'nodejs', 'express', 'postgresql', 'mysql', 'supabase'
+  ];
+  const FOOTER_ICON_IDS = [
+    'jwt', 'bcrypt', 'zod', 'dotenv',
+    'mysqlworkbench', 'mysql2', 'cloudinary', 'numpy',
+    'git', 'github', 'postman', 'laragon', 'nodemon'
+  ];
+
+  const headerIconsData = HEADER_ICON_IDS.map(id => iconsData.find(i => i.id === id)).filter(Boolean);
+  const footerIconsData = FOOTER_ICON_IDS.map(id => iconsData.find(i => i.id === id)).filter(Boolean);
+
+  const headerBannerContent = formatBannerSvg(headerIconsData, { theme: 'dark' });
+  const footerBannerContent = formatBannerSvg(footerIconsData, { theme: 'dark' });
+
+  const headerBannerPath = path.join(BANNERS_DIR, 'header-banner.svg');
+  const footerBannerPath = path.join(BANNERS_DIR, 'footer-banner.svg');
+
+  await fs.writeFile(headerBannerPath, headerBannerContent, 'utf8');
+  await fs.writeFile(footerBannerPath, footerBannerContent, 'utf8');
+
+  // Remove legacy tech-stack.svg
+  const legacyBannerPath = path.join(BANNERS_DIR, 'tech-stack.svg');
+  try {
+    await fs.unlink(legacyBannerPath);
+  } catch {}
 
   console.log('[5/5] Verifying all generated SVGs...');
   let totalErrors = 0;
@@ -696,14 +887,20 @@ export async function buildAll() {
     totalErrors++;
   }
 
-  const bannerVal = validateSvg(bannerContent, 'tech-stack.svg');
-  if (!bannerVal.valid) {
-    console.error(`  FAIL: assets/svg/banners/tech-stack.svg: ${bannerVal.errors.join(', ')}`);
+  const headerVal = validateSvg(headerBannerContent, 'header-banner.svg');
+  if (!headerVal.valid) {
+    console.error(`  FAIL: assets/svg/banners/header-banner.svg: ${headerVal.errors.join(', ')}`);
+    totalErrors++;
+  }
+
+  const footerVal = validateSvg(footerBannerContent, 'footer-banner.svg');
+  if (!footerVal.valid) {
+    console.error(`  FAIL: assets/svg/banners/footer-banner.svg: ${footerVal.errors.join(', ')}`);
     totalErrors++;
   }
 
   if (totalErrors === 0) {
-    console.log(`\nSuccess! All ${iconsData.length} icons, sprite, and banner verified valid.`);
+    console.log(`\nSuccess! All ${iconsData.length} icons, sprite, header-banner, and footer-banner verified valid.`);
   } else {
     throw new Error(`Verification failed with ${totalErrors} errors.`);
   }
@@ -740,26 +937,46 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   } else if (cmd === 'verify') {
     // Verification only
     console.log('Verifying SVG files in assets/svg/...');
-    const iconFiles = await fs.readdir(ICONS_DIR);
+    async function getSvgFiles(dir) {
+      const entries = await fs.readdir(dir, { withFileTypes: true });
+      const files = [];
+      for (const entry of entries) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          files.push(...await getSvgFiles(full));
+        } else if (entry.name.endsWith('.svg')) {
+          files.push(full);
+        }
+      }
+      return files;
+    }
+
+    const iconFiles = await getSvgFiles(ICONS_DIR);
     let ok = true;
-    for (const f of iconFiles) {
-      if (!f.endsWith('.svg')) continue;
-      const content = await fs.readFile(path.join(ICONS_DIR, f), 'utf8');
-      const val = validateSvg(content, f);
+    for (const file of iconFiles) {
+      const rel = path.relative(ICONS_DIR, file);
+      const content = await fs.readFile(file, 'utf8');
+      const val = validateSvg(content, rel);
       if (!val.valid) {
-        console.error(`  FAIL ${f}: ${val.errors.join('; ')}`);
+        console.error(`  FAIL ${rel}: ${val.errors.join('; ')}`);
         ok = false;
       } else {
-        console.log(`  OK   ${f}`);
+        console.log(`  OK   ${rel}`);
       }
     }
     const spriteContent = await fs.readFile(SPRITE_PATH, 'utf8');
     const sVal = validateSvg(spriteContent, 'sprite.svg');
     console.log(`  ${sVal.valid ? 'OK  ' : 'FAIL'} sprite.svg`);
 
-    const bannerPath = path.join(BANNERS_DIR, 'tech-stack.svg');
-    const bContent = await fs.readFile(bannerPath, 'utf8');
-    const bVal = validateSvg(bContent, 'tech-stack.svg');
-    console.log(`  ${bVal.valid ? 'OK  ' : 'FAIL'} tech-stack.svg`);
+    for (const bName of ['header-banner.svg', 'footer-banner.svg']) {
+      const bPath = path.join(BANNERS_DIR, bName);
+      try {
+        const bContent = await fs.readFile(bPath, 'utf8');
+        const bVal = validateSvg(bContent, bName);
+        console.log(`  ${bVal.valid ? 'OK  ' : 'FAIL'} ${bName}`);
+      } catch {
+        console.error(`  FAIL ${bName}: file not found`);
+      }
+    }
   }
 }
