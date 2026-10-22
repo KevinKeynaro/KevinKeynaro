@@ -50,6 +50,15 @@
     <text x="25" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" text-anchor="middle" fill="#FFFFFF">2</text>
   </g>
     </symbol>
+    <symbol id="banner-cloudflare" viewBox="0 0 128 128">
+      <path fill="#FFF" d="m115.679 69.288-15.591-8.94-2.689-1.163-63.781.436v32.381h82.061z"/><path fill="#F38020" d="M87.295 89.022c.763-2.617.472-5.015-.8-6.796-1.163-1.635-3.125-2.58-5.488-2.689l-44.737-.581c-.291 0-.545-.145-.691-.363s-.182-.509-.109-.8c.145-.436.581-.763 1.054-.8l45.137-.581c5.342-.254 11.157-4.579 13.192-9.885l2.58-6.723c.109-.291.145-.581.073-.872-2.906-13.158-14.644-22.97-28.672-22.97-12.938 0-23.913 8.359-27.838 19.952a13.35 13.35 0 0 0-9.267-2.58c-6.215.618-11.193 5.597-11.811 11.811-.145 1.599-.036 3.162.327 4.615C10.104 70.051 2 78.337 2 88.549c0 .909.073 1.817.182 2.726a.895.895 0 0 0 .872.763h82.57c.472 0 .909-.327 1.054-.8l.617-2.216z"/><path fill="#FAAE40" d="M101.542 60.275c-.4 0-.836 0-1.236.036-.291 0-.545.218-.654.509l-1.744 6.069c-.763 2.617-.472 5.015.8 6.796 1.163 1.635 3.125 2.58 5.488 2.689l9.522.581c.291 0 .545.145.691.363.145.218.182.545.109.8-.145.436-.581.763-1.054.8l-9.924.582c-5.379.254-11.157 4.579-13.192 9.885l-.727 1.853c-.145.363.109.727.509.727h34.089c.4 0 .763-.254.872-.654.581-2.108.909-4.325.909-6.614 0-13.447-10.975-24.422-24.458-24.422"/>
+    </symbol>
+    <symbol id="banner-vercel" viewBox="0 0 128 128">
+      <path fill="#FFFFFF" d="M64.002 8.576 128 119.424H0Zm0 0"/>
+    </symbol>
+    <symbol id="banner-netlify" viewBox="0 0 128 128">
+      <path d="M80.46 82.605h-8.777l-.734-.733V61.326c0-3.656-1.436-6.489-5.844-6.588-2.269-.06-4.864 0-7.638.11l-.416.425v26.589l-.733.733H47.54l-.733-.733V46.764l.733-.733h19.753c7.677 0 13.899 6.22 13.899 13.898v21.943l-.733.733Z" fill="#014847"/><path d="M58.942 119.902v-26.33l.733-.734h8.797l.733.733v26.331l-.733.733h-8.796zm0-84.838V8.734L59.675 8h8.797l.733.733v26.331l-.733.733h-8.796zm68.335 34.385H92.169l-.733-.733V59.92l.733-.733h35.108l.733.733v8.797zm-91.436 0H.733L0 68.716V59.92l.733-.733h35.108l.733.733v8.797zm-8.49-35.633v-1.209l6.034-6.033h1.208l9.223 9.223v6.39l-.852.852h-6.39zm7.242 68.235h-1.208l-6.033-6.033v-1.209l9.223-9.222h6.39l.851.851v6.39z" fill="#05bdba"/>
+    </symbol>
     <symbol id="banner-cloudinary" viewBox="0 0 128 128">
       <path fill="#3448C5" transform="scale(5.333333)" d="M24 14.8598c0 2.1729-1.3757 3.974-3.5903 4.6996l-.0995.0318V17.989c1.3777-.5805 2.1869-1.7275 2.1869-3.1291-.0072-2-1.6087-3.6288-3.6082-3.6699h-.5964l-.1432-.5686c-.7025-2.8996-3.2886-4.9489-6.2721-4.97a6.3915 6.3915 0 0 0-5.811 3.664l-.1828.3757-.4175.0437a4.4311 4.4311 0 0 0-3.3052 2.088c-1.2803 2.0856-.6274 4.8143 1.4583 6.0947v1.6897h-.01l-.149-.0675a5.9402 5.9402 0 0 1-3.3658-4.3494c-.5787-3.2291 1.57-6.3161 4.7991-6.8948a7.8766 7.8766 0 0 1 6.9839-4.149c3.4724.025 6.535 2.28 7.5901 5.5883 2.5789.3366 4.5138 2.5245 4.5327 5.1251zm-15.3176-1.322h.5647a.0656.0656 0 0 0 .0457-.1113L7.084 11.2158l-.0007-.0007a.0656.0656 0 0 0-.0927.0007L4.78 13.4265a.0656.0656 0 0 0 .0477.1113h.5566a.0656.0656 0 0 1 .0657.0656v5.0574c0 .6588.534 1.1928 1.1928 1.1928H9.247a.0656.0656 0 0 0 .0457-.1113l-.33-.33a1.1928 1.1928 0 0 1-.348-.839v-4.97a.0676.0676 0 0 1 .0676-.0655zm9.769 2.5466h.5667a.0655.0655 0 0 0 .0457-.1133l-2.2107-2.2087-.0015-.0015a.0636.0636 0 0 0-.0899.0015L14.551 15.971a.0657.0657 0 0 0 .0457.1133h.5567a.0656.0656 0 0 1 .0656.0656v2.5108c0 .6588.534 1.1928 1.1928 1.1928h2.6063a.0655.0655 0 0 0 .0457-.1113l-.33-.33a1.1928 1.1928 0 0 1-.348-.839V16.15a.0656.0656 0 0 1 .0657-.0656zm-4.8844-1.2743h.5646a.0656.0656 0 0 0 .0477-.1114l-2.2107-2.2027-.0006-.0006a.0656.0656 0 0 0-.0928.0006l-2.2087 2.2068a.0656.0656 0 0 0 .0457.1113h.5626a.0676.0676 0 0 1 .0657.0676v3.7791c0 .6588.534 1.1928 1.1928 1.1928h2.5983a.0656.0656 0 0 0 .0477-.1113l-.332-.33a1.193 1.193 0 0 1-.346-.839v-3.6956c0-.0366.0291-.0665.0657-.0676z"/>
     </symbol>
@@ -82,33 +91,39 @@
   <!-- Scrolling icons, faded at both edges by the mask -->
   <g mask="url(#banner-fade)">
     <g>
-      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-1664 0" dur="28s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-2048 0" dur="34s" repeatCount="indefinite"/>
       <use href="#banner-jwt" xlink:href="#banner-jwt" x="32.00" y="32.00" width="64" height="64"/>
       <use href="#banner-bcrypt" xlink:href="#banner-bcrypt" x="160.00" y="32.00" width="64" height="64"/>
       <use href="#banner-zod" xlink:href="#banner-zod" x="288.00" y="32.00" width="64" height="64"/>
       <use href="#banner-dotenv" xlink:href="#banner-dotenv" x="416.00" y="32.00" width="64" height="64"/>
       <use href="#banner-mysqlworkbench" xlink:href="#banner-mysqlworkbench" x="544.00" y="32.00" width="64" height="64"/>
       <use href="#banner-mysql2" xlink:href="#banner-mysql2" x="672.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-cloudinary" xlink:href="#banner-cloudinary" x="800.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-numpy" xlink:href="#banner-numpy" x="928.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-git" xlink:href="#banner-git" x="1056.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-github" xlink:href="#banner-github" x="1184.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-postman" xlink:href="#banner-postman" x="1312.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-laragon" xlink:href="#banner-laragon" x="1440.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-nodemon" xlink:href="#banner-nodemon" x="1568.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-jwt" xlink:href="#banner-jwt" x="1696.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-bcrypt" xlink:href="#banner-bcrypt" x="1824.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-zod" xlink:href="#banner-zod" x="1952.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-dotenv" xlink:href="#banner-dotenv" x="2080.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-mysqlworkbench" xlink:href="#banner-mysqlworkbench" x="2208.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-mysql2" xlink:href="#banner-mysql2" x="2336.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-cloudinary" xlink:href="#banner-cloudinary" x="2464.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-numpy" xlink:href="#banner-numpy" x="2592.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-git" xlink:href="#banner-git" x="2720.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-github" xlink:href="#banner-github" x="2848.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-postman" xlink:href="#banner-postman" x="2976.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-laragon" xlink:href="#banner-laragon" x="3104.00" y="32.00" width="64" height="64"/>
-      <use href="#banner-nodemon" xlink:href="#banner-nodemon" x="3232.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-cloudflare" xlink:href="#banner-cloudflare" x="800.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-vercel" xlink:href="#banner-vercel" x="928.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-netlify" xlink:href="#banner-netlify" x="1056.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-cloudinary" xlink:href="#banner-cloudinary" x="1184.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-numpy" xlink:href="#banner-numpy" x="1312.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-git" xlink:href="#banner-git" x="1440.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-github" xlink:href="#banner-github" x="1568.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-postman" xlink:href="#banner-postman" x="1696.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-laragon" xlink:href="#banner-laragon" x="1824.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nodemon" xlink:href="#banner-nodemon" x="1952.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-jwt" xlink:href="#banner-jwt" x="2080.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-bcrypt" xlink:href="#banner-bcrypt" x="2208.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-zod" xlink:href="#banner-zod" x="2336.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-dotenv" xlink:href="#banner-dotenv" x="2464.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-mysqlworkbench" xlink:href="#banner-mysqlworkbench" x="2592.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-mysql2" xlink:href="#banner-mysql2" x="2720.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-cloudflare" xlink:href="#banner-cloudflare" x="2848.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-vercel" xlink:href="#banner-vercel" x="2976.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-netlify" xlink:href="#banner-netlify" x="3104.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-cloudinary" xlink:href="#banner-cloudinary" x="3232.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-numpy" xlink:href="#banner-numpy" x="3360.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-git" xlink:href="#banner-git" x="3488.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-github" xlink:href="#banner-github" x="3616.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-postman" xlink:href="#banner-postman" x="3744.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-laragon" xlink:href="#banner-laragon" x="3872.00" y="32.00" width="64" height="64"/>
+      <use href="#banner-nodemon" xlink:href="#banner-nodemon" x="4000.00" y="32.00" width="64" height="64"/>
     </g>
   </g>
 </svg>

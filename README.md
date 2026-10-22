@@ -14,6 +14,12 @@ I build web apps with JavaScript and learn how they get attacked. Knowing how an
 - **Study network security.** I work through TryHackMe rooms and am following the Junior Penetration Tester path.
 - **Work with teams.** I merge pull requests, fix bugs across frontend and API, and collaborate on school projects through GitHub.
 
+## Tech Stack
+
+<p align="center">
+  <img src="assets/svg/cards/tech-stack.svg" alt="Tech Stack" width="100%">
+</p>
+
 ## Projects
 
 **[MySaving V2](https://github.com/KevinKeynaro/MySaving-V2)**  
@@ -34,8 +40,6 @@ A lost-and-found app for a school. Teachers post found items with a photo, stude
 - LinkedIn: [your-profile](https://www.linkedin.com/in/YOUR-LINKEDIN)
 - Email: your.email@example.com
 - TryHackMe: [your-profile](https://tryhackme.com/p/YOUR-USERNAME)
-
-## Languages & tools
 
 <p align="center">
   <img src="assets/svg/banners/footer-banner.svg" alt="Tooling and ecosystem" width="100%">

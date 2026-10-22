@@ -21,6 +21,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const ICONS_DIR = path.join(ROOT_DIR, 'assets', 'svg', 'icons');
 const BANNERS_DIR = path.join(ROOT_DIR, 'assets', 'svg', 'banners');
+const CARDS_DIR = path.join(ROOT_DIR, 'assets', 'svg', 'cards');
 const SPRITE_PATH = path.join(ROOT_DIR, 'assets', 'svg', 'sprite.svg');
 
 // Official Technology Icon Registry
@@ -405,6 +406,81 @@ export const ICONS = [
     },
     fallbackDefs: '',
     fallbackBody: ''
+  },
+  {
+    id: 'react',
+    name: 'React',
+    category: 'Framework',
+    brandColor: '#61DAFB',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'tailwindcss',
+    name: 'Tailwind CSS',
+    category: 'Framework',
+    brandColor: '#06B6D4',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'dbeaver',
+    name: 'DBeaver',
+    category: 'Database',
+    brandColor: '#875A38',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dbeaver/dbeaver-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'netlify',
+    name: 'Netlify',
+    category: 'Cloud',
+    brandColor: '#00C7B7',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    category: 'Cloud',
+    brandColor: '#FFFFFF',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg',
+    normalize(inner) {
+      if (!inner.includes('fill=')) {
+        inner = inner.replace(/<path\s+/i, '<path fill="#FFFFFF" ');
+      }
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
+  },
+  {
+    id: 'cloudflare',
+    name: 'Cloudflare',
+    category: 'Cloud',
+    brandColor: '#F38020',
+    sourceUrl: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/cloudflare/cloudflare-original.svg',
+    normalize(inner) {
+      return { defs: '', body: inner };
+    },
+    fallbackDefs: '',
+    fallbackBody: ''
   }
 ];
 
@@ -417,6 +493,8 @@ export const CATEGORY_MAP = {
   css3: 'frontend',
   flutter: 'frontend',
   nextjs: 'frontend',
+  react: 'frontend',
+  tailwindcss: 'frontend',
   nodejs: 'backend',
   express: 'backend',
   jwt: 'backend',
@@ -426,9 +504,13 @@ export const CATEGORY_MAP = {
   mysql: 'database',
   mysql2: 'database',
   mysqlworkbench: 'database',
+  dbeaver: 'database',
   postgresql: 'database',
   supabase: 'database',
   cloudinary: 'cloud',
+  netlify: 'cloud',
+  vercel: 'cloud',
+  cloudflare: 'cloud',
   git: 'tools',
   github: 'tools',
   laragon: 'tools',
@@ -627,6 +709,148 @@ ${symbols.join('\n')}
 ${uses.join('\n')}
     </g>
   </g>
+</svg>
+`;
+}
+
+/**
+ * Generate a categorized big card for all technologies
+ */
+export function formatCardSvg(iconsData, options = {}) {
+  const width = options.width || 900;
+  const height = options.height || 795;
+  const bgColor = options.bgColor || '#000000';
+
+  const DISPLAY_NAMES = {
+    typescript: 'TypeScript',
+    javascript: 'JavaScript',
+    python: 'Python',
+    dart: 'Dart',
+    react: 'React',
+    nextjs: 'Next.js',
+    flutter: 'Flutter',
+    tailwindcss: 'Tailwind CSS',
+    html5: 'HTML5',
+    css3: 'CSS3',
+    nodejs: 'Node.js',
+    express: 'Express.js',
+    jwt: 'JWT',
+    bcrypt: 'bcrypt',
+    zod: 'Zod',
+    dotenv: 'dotenv',
+    postgresql: 'PostgreSQL',
+    mysql: 'MySQL',
+    mysql2: 'mysql2',
+    mysqlworkbench: 'MySQL Workbench',
+    dbeaver: 'DBeaver',
+    supabase: 'Supabase',
+    cloudflare: 'Cloudflare',
+    vercel: 'Vercel',
+    netlify: 'Netlify',
+    cloudinary: 'Cloudinary',
+    git: 'Git',
+    github: 'GitHub',
+    postman: 'Postman',
+    laragon: 'Laragon',
+    nodemon: 'Nodemon',
+    numpy: 'NumPy'
+  };
+
+  const CATEGORY_ROWS = [
+    {
+      title: 'LANGUAGES',
+      ids: ['typescript', 'javascript', 'python', 'dart']
+    },
+    {
+      title: 'FRONTEND &amp; FRAMEWORKS',
+      ids: ['react', 'nextjs', 'flutter', 'tailwindcss', 'html5', 'css3']
+    },
+    {
+      title: 'BACKEND &amp; SECURITY',
+      ids: ['nodejs', 'express', 'jwt', 'bcrypt', 'zod', 'dotenv']
+    },
+    {
+      title: 'DATABASES &amp; STORAGE',
+      ids: ['postgresql', 'mysql', 'mysql2', 'mysqlworkbench', 'dbeaver', 'supabase']
+    },
+    {
+      title: 'CLOUD &amp; DEPLOYMENT',
+      ids: ['cloudflare', 'vercel', 'netlify', 'cloudinary']
+    },
+    {
+      title: 'TOOLS &amp; PLATFORMS',
+      ids: ['git', 'github', 'postman', 'laragon', 'nodemon', 'numpy']
+    }
+  ];
+
+  const allDefs = [];
+  const symbols = [];
+
+  for (const icon of iconsData) {
+    if (icon.defs && icon.defs.trim().length > 0) {
+      allDefs.push(icon.defs.trim());
+    }
+    symbols.push(`    <symbol id="card-${icon.id}" viewBox="0 0 128 128">
+      ${icon.body.trim()}
+    </symbol>`);
+  }
+
+  const defsBlock = allDefs.length > 0 ? `\n    ${allDefs.join('\n    ')}` : '';
+
+  const colWidth = 135;
+  const leftMargin = 45;
+
+  let rowY = 88;
+  const contentSections = [];
+
+  for (const row of CATEGORY_ROWS) {
+    const titleText = `<text x="${leftMargin}" y="${rowY}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#8b949e" letter-spacing="1">${row.title}</text>`;
+    const divider = `<line x1="${leftMargin}" y1="${rowY + 8}" x2="855" y2="${rowY + 8}" stroke="#21262d" stroke-width="1"/>`;
+    
+    const iconY = rowY + 22;
+    const items = [];
+
+    row.ids.forEach((id, idx) => {
+      const centerX = leftMargin + (idx + 0.5) * colWidth;
+      const iconX = centerX - 20;
+      const label = escapeXml(DISPLAY_NAMES[id] || id);
+      items.push(`      <g>
+        <use href="#card-${id}" xlink:href="#card-${id}" x="${iconX.toFixed(2)}" y="${iconY.toFixed(2)}" width="40" height="40"/>
+        <text x="${centerX.toFixed(2)}" y="${(iconY + 54).toFixed(2)}" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#c9d1d9">${label}</text>
+      </g>`);
+    });
+
+    contentSections.push(`    <!-- ${row.title.replace(/&amp;/g, 'AND')} -->
+    <g>
+      ${titleText}
+      ${divider}
+${items.join('\n')}
+    </g>`);
+
+    rowY += 118;
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
+  <defs>${defsBlock}
+${symbols.join('\n')}
+  </defs>
+
+  <!-- Card background and border -->
+  <rect x="0" y="0" width="${width}" height="${height}" fill="${bgColor}"/>
+  <rect x="0.75" y="0.75" width="${width - 1.5}" height="${height - 1.5}" fill="none" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- Card header -->
+  <g>
+    <circle cx="45" cy="36" r="4.5" fill="#ff5f56"/>
+    <circle cx="60" cy="36" r="4.5" fill="#ffbd2e"/>
+    <circle cx="75" cy="36" r="4.5" fill="#27c93f"/>
+    <text x="96" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#f0f6fc">Tech Stack</text>
+    <text x="855" y="41" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">32 Technologies</text>
+    <line x1="45" y1="58" x2="855" y2="58" stroke="#21262d" stroke-width="1"/>
+  </g>
+
+  <!-- Categorized rows -->
+${contentSections.join('\n\n')}
 </svg>
 `;
 }
@@ -838,16 +1062,16 @@ export async function buildAll() {
   const spriteContent = formatSpriteSvg(iconsData);
   await fs.writeFile(SPRITE_PATH, spriteContent, 'utf8');
 
-  console.log('[4/5] Generating standalone banners...');
+  console.log('[4/6] Generating standalone banners...');
   const HEADER_ICON_IDS = [
     'typescript', 'javascript', 'python', 'dart',
-    'nextjs', 'flutter', 'html5', 'css3',
-    'nodejs', 'express', 'postgresql', 'mysql', 'supabase'
+    'react', 'nextjs', 'flutter', 'tailwindcss', 'html5', 'css3',
+    'nodejs', 'express', 'postgresql', 'mysql', 'dbeaver', 'supabase'
   ];
   const FOOTER_ICON_IDS = [
     'jwt', 'bcrypt', 'zod', 'dotenv',
-    'mysqlworkbench', 'mysql2', 'cloudinary', 'numpy',
-    'git', 'github', 'postman', 'laragon', 'nodemon'
+    'mysqlworkbench', 'mysql2', 'cloudflare', 'vercel', 'netlify', 'cloudinary',
+    'numpy', 'git', 'github', 'postman', 'laragon', 'nodemon'
   ];
 
   const headerIconsData = HEADER_ICON_IDS.map(id => iconsData.find(i => i.id === id)).filter(Boolean);
@@ -868,7 +1092,13 @@ export async function buildAll() {
     await fs.unlink(legacyBannerPath);
   } catch {}
 
-  console.log('[5/5] Verifying all generated SVGs...');
+  console.log('[5/6] Generating categorized tech stack card assets/svg/cards/tech-stack.svg...');
+  await fs.mkdir(CARDS_DIR, { recursive: true });
+  const cardContent = formatCardSvg(iconsData, { theme: 'dark' });
+  const cardPath = path.join(CARDS_DIR, 'tech-stack.svg');
+  await fs.writeFile(cardPath, cardContent, 'utf8');
+
+  console.log('[6/6] Verifying all generated SVGs...');
   let totalErrors = 0;
 
   for (const icon of iconsData) {
@@ -899,8 +1129,14 @@ export async function buildAll() {
     totalErrors++;
   }
 
+  const cardVal = validateSvg(cardContent, 'cards/tech-stack.svg');
+  if (!cardVal.valid) {
+    console.error(`  FAIL: assets/svg/cards/tech-stack.svg: ${cardVal.errors.join(', ')}`);
+    totalErrors++;
+  }
+
   if (totalErrors === 0) {
-    console.log(`\nSuccess! All ${iconsData.length} icons, sprite, header-banner, and footer-banner verified valid.`);
+    console.log(`\nSuccess! All ${iconsData.length} icons, sprite, banners, and tech-stack card verified valid.`);
   } else {
     throw new Error(`Verification failed with ${totalErrors} errors.`);
   }
@@ -977,6 +1213,15 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       } catch {
         console.error(`  FAIL ${bName}: file not found`);
       }
+    }
+
+    const cardPath = path.join(CARDS_DIR, 'tech-stack.svg');
+    try {
+      const cardContent = await fs.readFile(cardPath, 'utf8');
+      const cVal = validateSvg(cardContent, 'cards/tech-stack.svg');
+      console.log(`  ${cVal.valid ? 'OK  ' : 'FAIL'} cards/tech-stack.svg`);
+    } catch {
+      console.error(`  FAIL cards/tech-stack.svg: file not found`);
     }
   }
 }
